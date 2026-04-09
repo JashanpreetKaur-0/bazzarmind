@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BazaarMind - The Silent Middleman</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🤝 BazaarMind</h1>
+            <p class="tagline">The Silent Middleman for Fair Local Trade</p>
+        </header>
+
+        <div class="trade-interface">
+            <!-- Vendor Side -->
+            <div class="participant vendor-side">
+                <div class="participant-header">
+                    <span class="icon">🛒</span>
+                    <h2>Vendor</h2>
+                </div>
+                
+                <div class="input-section">
+                    <label>Product & Details:</label>
+                    <input type="text" id="vendor-product" placeholder="e.g., Fresh tomatoes, 5kg">
+                    
+                    <label>Your Message:</label>
+                    <textarea id="vendor-message" placeholder="Speak in your language..."></textarea>
+                    
+                    <div class="context-inputs">
+                        <select id="vendor-location">
+                            <option value="rural">🏘️ Rural Area</option>
+                            <option value="semi-urban">🏙️ Semi-Urban</option>
+                            <option value="urban">🌆 Urban</option>
+                        </select>
+                        
+                        <select id="urgency">
+                            <option value="normal">⏰ Normal Sale</option>
+                            <option value="urgent">🚨 Urgent Sale</option>
+                            <option value="festival">🎉 Festival Season</option>
+                            <option value="bulk">📦 Bulk Sale</option>
+                        </select>
+                    </div>
+                    
+                    <button class="send-btn" onclick="processVendorMessage()">Send Message</button>
+                </div>
+            </div>
+
+            <!-- AI Mediator Display -->
+            <div class="mediator-section">
+                <div class="fair-deal-meter">
+                    <h3>⚖️ Fair Deal Meter</h3>
+                    <div class="meter-container">
+                        <div class="meter-bar" id="fairness-meter"></div>
+                    </div>
+                    <div class="meter-labels">
+                        <span>Unfair</span>
+                        <span>Fair</span>
+                        <span>Very Fair</span>
+                    </div>
+                </div>
+                
+                <div class="price-suggestion">
+                    <h3>💡 AI Price Guidance</h3>
+                    <div id="price-range" class="price-display">
+                        <span class="price-label">Fair Range:</span>
+                        <span id="suggested-range">--</span>
+                    </div>
+                    <p id="price-explanation" class="explanation"></p>
+                </div>
+                
+                <div class="cultural-context">
+                    <h3>🌍 Cultural Context</h3>
+                    <p id="negotiation-style">Negotiation style will be adapted based on region</p>
+                </div>
+            </div>
+
+            <!-- Buyer Side -->
+            <div class="participant buyer-side">
+                <div class="participant-header">
+                    <span class="icon">🛍️</span>
+                    <h2>Buyer</h2>
+                </div>
+                
+                <div class="input-section">
+                    <label>Your Response:</label>
+                    <textarea id="buyer-message" placeholder="Respond in your language..."></textarea>
+                    
+                    <div class="context-inputs">
+                        <select id="buyer-language">
+                            <option value="english">🇺🇸 English</option>
+                            <option value="hindi">🇮🇳 Hindi</option>
+                            <option value="spanish">🇪🇸 Spanish</option>
+                            <option value="arabic">🇸🇦 Arabic</option>
+                            <option value="french">🇫🇷 French</option>
+                        </select>
+                    </div>
+                    
+                    <button class="send-btn" onclick="processBuyerMessage()">Send Response</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Conversation Display -->
+        <div class="conversation-display">
+            <h3>🤖 AI-Mediated Conversation</h3>
+            <div id="conversation-log" class="conversation-log">
+                <div class="system-message">
+                    BazaarMind is ready to facilitate fair trade. Both parties will see respectful, culturally-aware messages that preserve intent while ensuring fairness.
+                </div>
+            </div>
+        </div>
+
+        <!-- Trust Signals -->
+        <div class="trust-signals">
+            <div class="signal-item">
+                <span class="signal-icon">✅</span>
+                <span>Language barriers removed</span>
+            </div>
+            <div class="signal-item">
+                <span class="signal-icon">⚖️</span>
+                <span>Fair pricing guidance active</span>
+            </div>
+            <div class="signal-item">
+                <span class="signal-icon">🛡️</span>
+                <span>Exploitation protection enabled</span>
+            </div>
+            <div class="signal-item">
+                <span class="signal-icon">🤝</span>
+                <span>Cultural respect maintained</span>
+            </div>
+        </div>
+
+        <footer>
+            <p>Empowering local vendors • Reducing language-based exploitation • Creating dignified trade</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
